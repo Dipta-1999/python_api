@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect
 import socket
 import datetime
 
@@ -29,6 +29,14 @@ def root_endpoint():
                 'date': date_of_execution   
             }
     return jsonify(result)
+
+
+
+@app.route("/status/<path:url>")
+def status_endpoint(url):
+    url = url.replace("-",".").replace("_",".")
+    #return redirect(url_for('static', filename=new_url))
+    return redirect("http://" + url)
 
 if __name__ == "__app__":
     app.run(debug=True)
