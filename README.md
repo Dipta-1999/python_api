@@ -1,4 +1,4 @@
-# python_api
+# Python API
 I have created two APIs using FLASK.
 ## Steps
   1. Install Python on your machine
